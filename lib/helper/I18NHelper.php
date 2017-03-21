@@ -17,31 +17,31 @@
  * @version    SVN: $Id: I18NHelper.php 31894 2011-01-24 18:12:37Z fabien $
  */
 
-function __($text, $args = array(), $catalogue = 'messages')
-{
-  if (sfConfig::get('sf_i18n'))
-  {
-    return sfContext::getInstance()->getI18N()->__($text, $args, $catalogue);
-  }
-  else
-  {
-    if (empty($args))
-    {
-      $args = array();
-    }
+// function __($text, $args = array(), $catalogue = 'messages')
+// {
+//   if (sfConfig::get('sf_i18n'))
+//   {
+//     return sfContext::getInstance()->getI18N()->__($text, $args, $catalogue);
+//   }
+//   else
+//   {
+//     if (empty($args))
+//     {
+//       $args = array();
+//     }
 
-    // replace object with strings
-    foreach ($args as $key => $value)
-    {
-      if (is_object($value) && method_exists($value, '__toString'))
-      {
-        $args[$key] = $value->__toString();
-      }
-    }
+//     // replace object with strings
+//     foreach ($args as $key => $value)
+//     {
+//       if (is_object($value) && method_exists($value, '__toString'))
+//       {
+//         $args[$key] = $value->__toString();
+//       }
+//     }
 
-    return strtr($text, $args);
-  }
-}
+//     return strtr($text, $args);
+//   }
+// }
 
 /**
  * Format a string according to a number.
