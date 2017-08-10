@@ -317,7 +317,7 @@ function link_to_unless()
  * @param   bool    $absolute If true, an absolute path is returned (optional)
  * @return  The web URL root 
  */
-function symfony_public_path($path, $absolute = false)
+function public_path($path, $absolute = false)
 {
   $request = sfContext::getInstance()->getRequest();
   $root = $request->getRelativeUrlRoot();
